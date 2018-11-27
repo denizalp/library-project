@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>See which libraries your friend has been to!</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<body>
+<h1>See which libraries your friend has been to!</h1>
+
+<form method="POST" action="/friends">
+<p>Search a  specific person! <input type="text" name="name"> <input type="submit" value="Find Friend!"></p>
+</form>
+
+<table style="width:100%">
+
+  <tr>
+    <th>Name</th>
+    <th>Library</th>
+  </tr>
+
+    {% for user in para1 %}
+
+  <tr>
+  {% for u in user %}
+    <td>{{ u }}</td>
+    {% endfor %}
+  </tr>
+
+    {% endfor %}
+</table>
+
+</body>
+</html>

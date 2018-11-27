@@ -1,3 +1,4 @@
+
 # Programming Environment: Python on Google Cloud
 
 We ask you to use cloud-based technologies for the projects, and the instructions are written assuming their use. You can work on the project using your own machine, or some other environment. However, the course staff can only support the enviroment we are providing.
@@ -7,7 +8,7 @@ The staff has worked to setup Google Cloud credits for you, so you get experienc
 ### GitHub
 
 One drawback of using a cloud computing platform is that it is difficult to open GUI text editors
-such as Sublime Text to write your code.  We recommend setting up a version control system for your project, 
+such as Sublime Text to write your code.  We recommend setting up a version control system for your project,
 such as git on [GitHub](http://www.github.com), so your team can share code. This way, you can code on your desktop, commit your changes, and pull the updated changes on your cloud virtual machine.
 
 
@@ -20,7 +21,7 @@ To use it, follow the steps in [Python Flask Skeleton for Google App Engine](htt
 We strongly recommend reading the following documentations:
 
 * [General Flask Documentation](http://flask.pocoo.org/)
-* [Jinja Templates](http://jinja.pocoo.org/docs/dev/templates/): this makes it easy to send data (e.g., arrays, dictionaries) 
+* [Jinja Templates](http://jinja.pocoo.org/docs/dev/templates/): this makes it easy to send data (e.g., arrays, dictionaries)
   to your HTML code and dynamically render them.
 
 
@@ -30,5 +31,5 @@ If you would like to use Columbia's unix machines for this course, you will
 need a CS account.  You can open one from on the [CRF webpage](https://www.cs.columbia.edu/~crf/accounts/cs.html):
 and choose the appropriate "student" category as the _account type_
 
-There is a $50 charge to open a CS account. 
+There is a $50 charge to open a CS account.
 Please refer to CRF's homepage for details on infrastructure and policies of the CS department.

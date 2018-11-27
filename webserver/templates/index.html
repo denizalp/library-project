@@ -1,29 +1,44 @@
 <html>
-  <style>
-    body{ 
-      font-size: 15pt;
-      font-family: arial;
-    }
-  </style>
+
+
+
+<head>
+    <title> Columbia University | Libraries</title>
+    	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+
+</head>
 
 
 <body>
-  <h1>Some famous Computer Scientists</h1>
-  <div>{{data}}</div>
+
+  <h1>Columbia University | Libraries</h1>
 
   <div>
     {% for n in data %}
-    <div>{{n}}</div>
+    <div> <a href="/libraries/{{ n }}">{{n}}</a> </div>
     {% endfor %}
   </div>
 
-<p><a href="/another">Go to the other page</a></p>
 
-<form method="POST" action="/add">
-<p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
+<form method="POST" action="/addLibrary">
+<p>Search a  Library: <input type="text" name="library"> <input type="submit" value="Add"></p>
+</form>
+
+<form method="POST" action="/dates">
+  Check how full the library was in the past:
+  <input type="datetime-local" name="start">
+    <input type="datetime-local" name="end">
+    <select name = 'library'>
+        {% for n in data %}
+  <option {{ n }}="volvo">{{ n }}</option>
+  {% endfor %}
+</select>
+    <input type="submit" value="Search">
 </form>
 
 </body>
+
+<div> <a href='/users'</a> Check where your friends are!</div>
 
 
 </html>
