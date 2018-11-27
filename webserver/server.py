@@ -258,15 +258,17 @@ def dates():
     try:
         datetime.strptime(request.form['start'], format)
         datetime.strptime(request.form['end'], format)
+
+        start = datetime.strptime(request.form['start'], format).strftime(new_format)
+        end = datetime.strptime(request.form['end'], format).strftime(new_format)
+
+
+        cmd = "SELECT COUNT(user_id) FROM entries_entered WHERE entry_time > TIMESTAMP '" + start +"' - INTERVAL '24' HOUR  AND entry_time < '" +end+ "'AND library_name = '"+ library + "'GROUP BY library_name;"
+        cursor = g.conn.execute(cmd);
+        count = cursor.__next__()[0]
+        cursor.close()
     except ValueError:
         return redirect('/')
-    start = datetime.strptime(request.form['start'], format).strftime(new_format)
-    end = datetime.strptime(request.form['end'], format).strftime(new_format)
-
-    cmd = "SELECT COUNT(user_id) FROM entries_entered WHERE entry_time > TIMESTAMP '" + start +"' - INTERVAL '24' HOUR  AND entry_time < '" +end+ "'AND library_name = '"+ library + "'GROUP BY library_name;"
-    cursor = g.conn.execute(cmd);
-    count = cursor.__next__()[0]
-    cursor.close()
     return render_template("dates.html", para1 = count)
 
 @app.route('/addLibrary', methods=['POST'])
